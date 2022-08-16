@@ -17,14 +17,20 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "packagerOpts": { 
+      "port": 19000 
+      }
+    ,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.harlexanderjs.ISM"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.harlexanderjr.ISM_CRP"
     },
     "web": {
       "favicon": "./assets/favicon.png"
