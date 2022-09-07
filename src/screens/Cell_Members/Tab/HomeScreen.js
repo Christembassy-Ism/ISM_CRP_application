@@ -1,8 +1,10 @@
 import { View, Text, Image, StyleSheet, SafeAreaView, FlatList } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import FontAwesome from '@expo/vector-icons/FontAwesome5';
 import CarouselListPage from '../../../components/carousel/carouselImages';
 import PreviousMeetings from '../../../components/Previous Meetings/PreviousMeetings';
+import { useAuth } from '../../../../lib/context/auth';
+import { useUser } from '../../../../lib/context/user';
 
 
 const data = [
@@ -51,6 +53,7 @@ const Item = ({ title, date }) => (
 );
 
 const HomeScreen = () => {
+  const { data } = useUser();
 
   const renderItem = ({ item }) => (
     <Item title={item.title} date={item.date} />
@@ -60,9 +63,9 @@ const HomeScreen = () => {
   return (
     <View className="flex-1 bg-white">
       <View className="px-5 pt-16 pb-8">
-       <Text className="text-3xl font-[NunitoBold]">Hello Alex,</Text>
+       <Text className="text-3xl font-[NunitoBold]" style={{textTransform : "capitalize"}}>Hello {data.firstName},</Text>
       </View>
-      <CarouselListPage/>
+      <CarouselListPage paginate={true}/>
       <PreviousMeetings/>
     </View>
   )

@@ -1,7 +1,8 @@
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Entypo from '@expo/vector-icons/Entypo';
 import MenuDropdown from '../../../components/Menu/menucontainer';
+import { useUser } from '../../../../lib/context/user';
 
 const ProfileScreen = () => {
   const [show, setShow] = useState(false);
@@ -9,6 +10,7 @@ const ProfileScreen = () => {
   const menuDropDown = () => {
     setShow(!show);
   }
+  const { data } = useUser();
 
   return (
     <View className="flex-1 bg-blue-400">
@@ -35,23 +37,31 @@ const ProfileScreen = () => {
           <View className="space-y-2 my-4">
             <View className="p-4 flex-row justify-between bg-gray-100 rounded-lg">
               <Text className=" font-[Nunito]">First Name</Text>
-              <Text className="text-blue-800 text-md font-[NunitoBold]">Oluwatomisin</Text>
+              <Text className="text-blue-800 text-md font-[NunitoBold]" style={{textTransform : "capitalize"}}>{data.firstName}</Text>
             </View>
             <View className="p-4 flex-row justify-between bg-gray-100 rounded-lg">
               <Text className=" font-[Nunito]">Last Name</Text>
-              <Text className="text-blue-800 text-md font-[NunitoBold]">Harry</Text>
+              <Text className="text-blue-800 text-md font-[NunitoBold]" style={{textTransform : "capitalize"}}>{data.lastName}</Text>
             </View>
             <View className="p-4 flex-row justify-between bg-gray-100 rounded-lg">
               <Text className=" font-[Nunito]">Email</Text>
-              <Text className="text-blue-800 text-md font-[NunitoBold]">owluwatomisin@gmail.com</Text>
+              <Text className="text-blue-800 text-md font-[NunitoBold]" style={{textTransform : "capitalize"}}>{data.email}</Text>
             </View>
             <View className="p-4 flex-row justify-between bg-gray-100 rounded-lg">
               <Text className=" font-[Nunito]">Mobile</Text>
-              <Text className="text-blue-800 text-md font-[NunitoBold]">+234 810 293 378</Text>
+              <Text className="text-blue-800 text-md font-[NunitoBold]" style={{textTransform : "capitalize"}}>{data.mobile}</Text>
+            </View>
+            <View className="p-4 flex-row justify-between bg-gray-100 rounded-lg">
+              <Text className=" font-[Nunito]">Founder</Text>
+              <Text className="text-blue-800 text-md font-[NunitoBold]" style={{textTransform : "capitalize"}}>{data.founded_ministry}</Text>
             </View>
             <View className="p-4 flex-row justify-between bg-gray-100 rounded-lg">
               <Text className=" font-[Nunito]">Country</Text>
-              <Text className="text-blue-800 text-md font-[NunitoBold]">Romania</Text>
+              <Text className="text-blue-800 text-md font-[NunitoBold]" style={{textTransform : "capitalize"}}>{data.country}</Text>
+            </View>
+            <View className="p-4 flex-row justify-between bg-gray-100 rounded-lg">
+              <Text className=" font-[Nunito]">Region</Text>
+              <Text className="text-blue-800 text-md font-[NunitoBold]" style={{textTransform : "capitalize"}}>{data.region}</Text>
             </View>
           </View>
         </View>
@@ -61,15 +71,15 @@ const ProfileScreen = () => {
             <View className="space-y-2 my-4">
               <View className="p-4 flex-row justify-between bg-gray-100 rounded-lg">
                 <Text className=" font-[Nunito]">Cell Name</Text>
-                <Text className="text-blue-800 text-md font-[NunitoBold]">King's Cell</Text>
+                <Text className="text-blue-800 text-md font-[NunitoBold]" style={{textTransform : "capitalize"}}>{data.cell_name}</Text>
               </View>
               <View className="p-4 flex-row justify-between bg-gray-100 rounded-lg">
                 <Text className=" font-[Nunito]">Cell Leader</Text>
-                <Text className="text-blue-800 text-md font-[NunitoBold]">Brother John</Text>
+                <Text className="text-blue-800 text-md font-[NunitoBold]" style={{textTransform : "capitalize"}}>Brother John</Text>
               </View>
               <View className="p-4 flex-row justify-between bg-gray-100 rounded-lg">
                 <Text className=" font-[Nunito]">Region</Text>
-                <Text className="text-blue-800 text-md font-[NunitoBold]">East Europe</Text>
+                <Text className="text-blue-800 text-md font-[NunitoBold]" style={{textTransform : "capitalize"}}>East Europe</Text>
               </View>
             </View>
         </View>

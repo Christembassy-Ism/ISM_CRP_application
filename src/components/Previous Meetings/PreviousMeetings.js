@@ -49,8 +49,8 @@ const Item = ({ title, date }) => (
 
 const PreviousMeetings = () => {
 
-  const renderItem = ({ item }) => (
-    <Item title={item.title} date={item.date} />
+  const renderItem = (item, index) => (
+    <Item key={index} title={item.title} date={item.date} />
   );
 
 
@@ -59,10 +59,15 @@ const PreviousMeetings = () => {
         <Text className="font-[NunitoBold] text-xl py-4">Previous Meetings</Text>
 
         <SafeAreaView>
-          <FlatList
+          {/* <FlatList
           data={data} 
           renderItem={renderItem}
-          keyExtractor={(item, index) => index}/>
+          keyExtractor={(item, index) => index}/> */}
+          {
+            data.map((item, index) => (
+              renderItem(item, index)
+            ))
+          }
         </SafeAreaView>
       </View>
   )

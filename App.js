@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import MyStack from './src/components/stack/stack';
 import { useFonts } from 'expo-font';
 import "./ignoreWarnings";
+import { AuthProvider } from './lib/context/auth';
+import { UserProvider } from './lib/context/user';
 
 export default function App() {
 
@@ -21,20 +23,14 @@ export default function App() {
   }
 
   return (
-  <NavigationContainer>
-      <TailwindProvider>
-        <MyStack/>
-      </TailwindProvider>
-  </NavigationContainer>
+      <AuthProvider>
+        <UserProvider>
+           <NavigationContainer>
+              <TailwindProvider>
+                <MyStack/>
+              </TailwindProvider>
+          </NavigationContainer>
+        </UserProvider>
+      </AuthProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontWeight : 'bold'
-  },
-});

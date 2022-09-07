@@ -8,7 +8,7 @@ const Header = ({navigation}) => {
           <TouchableHighlight  
           onPress={() => navigation.goBack()}>
               <View
-              className="py-3 px-5 bg-white flex-row items-center gap-3">
+              className="pt-14 pb-3 px-5 bg-white flex-row items-center gap-3">
                 <FontAwesome name="arrow-left" size={15}/> 
                 <Text className="text-lg">Back</Text>            
               </View>

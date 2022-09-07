@@ -7,7 +7,7 @@ import {
 
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
-const CarouselListPage = () => {
+const CarouselListPage = ({paginate}) => {
   const [ state, setState ] = React.useState({
     carouselItems: [
     {
@@ -73,7 +73,7 @@ const CarouselListPage = () => {
       itemWidth={350}
       renderItem={_renderItem}
       onSnapToItem = { index => setState(prev => ({...prev, activeIndex:index})) } />
-    <Paginate/>
+    { paginate && <Paginate/> }
 </View>
   )
 }
