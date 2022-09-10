@@ -22,7 +22,7 @@ const CellLeaderSignIn = ({navigation}) => {
          <View className="flex-1 justify-between py-20 px-8">
             <Formik
                 // initialValues={{email : "", password : ""}}
-                initialValues={{email : "dunkwualex6@gmail.com", password : "jdbjsbjbsjdbjsd"}}
+                initialValues={{email : "peachygee@gmail.com", password : "jdbjsbjbsjdbjsd"}}
                 onSubmit={values => cellLeaderSignIn(values, navigation)}>
 
                 {({handleSubmit, handleChange, handleBlur, values}) => (

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Entypo from '@expo/vector-icons/Entypo';
 import MenuDropdown from '../../../components/Menu/menucontainer';
 import { useUser } from '../../../../lib/context/user';
+import ProfilePicture from '../../../components/Profile/ProfilePicture';
 
 const Profile = () => {
   const [show, setShow] = useState(false);
@@ -10,7 +11,7 @@ const Profile = () => {
   const menuDropDown = () => {
     setShow(!show);
   }
-  
+
   const { data, signOut } = useUser();
 
   return (
@@ -23,13 +24,8 @@ const Profile = () => {
           <Entypo name="dots-three-vertical" size={24} color="white" />
         </TouchableOpacity>
       </View>
-      
-      <View
-      className="items-center -mb-16 z-10">
-        <Image
-        source={require("../../../assets/user.png")}
-        className="rounded-full p-0"/>
-      </View>
+
+      <ProfilePicture data={data}/>
 
       <View className="bg-white flex-1 pt-20 px-5" style={style.Container}>
         <ScrollView>
@@ -85,10 +81,9 @@ const Profile = () => {
             </View>
         </View>
         <View className="py-5">
-          <TouchableOpacity
-          onPress={() => signOut()}>
+          <TouchableOpacity>
               <View className="text-white bg-blue-600 w-full py-5  rounded-xl shadow-lg">
-                <Text className="text-center text-white font-bold">Sign Out</Text> 
+                <Text className="text-center text-white font-bold">Edit Profile</Text> 
               </View>
           </TouchableOpacity>
         </View>       

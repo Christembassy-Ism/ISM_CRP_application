@@ -23,14 +23,15 @@ const CellMemberRegister = ({navigation}) => {
          <View className="flex-1 justify-between py-16 px-8">
           
             <Formik
-                initialValues={{firstName : "hello", lastName : "world", email : "jndjndjndjd@gmail.com", cell_name : "dkcndncjkdcn ",founded_ministry: null, region : "kcmdkcmdk", country : "nigeria", password : "jdbjsbjbsjdbjsd", mobile : "093092092"}}
+                            initialValues={{firstName : "hello", lastName : "world", email : "jndjndjndjd@gmail.com", cell_name : "dkcndncjkdcn ",founded_ministry: null, region : "", country : "", password : "", mobile : ""}}
+                // initialValues={{firstName : "hello", lastName : "world", email : "jndjndjndjd@gmail.com", cell_name : "dkcndncjkdcn ",founded_ministry: null, region : "kcmdkcmdk", country : "nigeria", password : "jdbjsbjbsjdbjsd", mobile : "093092092"}}
                 onSubmit={values => cellMemberRegister({...values, user_type : "cell member", founder : value}, navigation)}>
 
                 {({handleSubmit, handleChange, handleBlur, values}) => (
                 <>
                     <View className="space-y-16">
                         <Text className="text-4xl font-bold">
-                            Join the ministry.
+                            Join the mi.nistry.
                         </Text>
                         {
                           error ? (

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { Text, View } from 'react-native';
 import { useUser } from '../../../lib/context/user';
 import Loader from '../../components/Loader/loader';
 import MenuTab from '../../components/stack/menutab'

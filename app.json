@@ -11,16 +11,30 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ],
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
     ],
-    "packagerOpts": { 
-      "port": 19000 
-      }
-    ,
+    "packagerOpts": {
+      "port": 19000
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.harlexanderjs.ISM"
